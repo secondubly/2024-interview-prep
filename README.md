@@ -18,5 +18,5 @@ it's on the tin - unless otherwise noted, all code is written in Javascript ES6 
 - [ ] Selection Sort
 - [ ] Quick Sort
 
-# Leetcode Problems and Blind 70
+# Leetcode Problems and Blind 75
 - Will be put into their own folders and linked here for ease of access
