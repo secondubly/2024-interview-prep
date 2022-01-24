@@ -1,5 +1,5 @@
 class Stack {
-    constructor(size = null) {
+    constructor(size = undefined) {
         this.size = size;
         if(size) {
             this.arr = new Array(size);
@@ -9,7 +9,10 @@ class Stack {
     }
 
     push(value) {
-        this.arr.push(value)
+        if(this.size && this.arr[this.size - 1] != null) {
+            throw new Error("The stack is full.")
+        }
+        this.arr.push(value);
     }
 
     pop() {
