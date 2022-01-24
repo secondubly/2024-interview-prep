@@ -5,7 +5,7 @@ it's on the tin - unless otherwise noted, all code is written in Javascript ES6 
 # Study Topics
 ## Data Structures
 - [x] Linked Lists (Single, Double) (Completed on January 19, 2022)
-- [ ] Stack
+- [x] Stack (completed on Januqary 24, 2022)
 - [ ] Queue
 - [ ] Tree
 - [ ] Graph
