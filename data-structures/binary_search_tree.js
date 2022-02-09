@@ -10,11 +10,11 @@ class Node {
     }
 
     hasLeft() {
-        return this.left && !this.right;
+        return this.left;
     }
 
     hasRight() {
-        return !this.left && this.right;
+        return this.right;
     }
 }
 
@@ -82,4 +82,63 @@ class BinarySearchTree {
             this.delete(data, parent.right)
         }
     }
+
+    getMin(node = this.root) {
+        if(!node.left) {
+            return node.data;
+        }
+        this.getMin(node.left)
+    }
+
+    getMax(node = this.right) {
+        if (!node.right) {
+            return node.data;
+        }
+        this.getMax(node.right);
+    }
+
+    // preorder: node, left, right
+    preOrder(node = this.root) {
+        if (!node) {
+            return;
+        } else {
+            console.log(`${node.data} `)
+            this.preOrder(node.left);
+            this.preOrder(node.right);
+        }
+    }
+
+    inOrder(node = this.root) {
+        if(!node) {
+            return;
+        } else {
+            this.preOrder(node.left);
+            console.log(`${node.data} `)
+            this.preOrder(node.right);
+        }
+    }
+
+    postOrder(node = this.root) {
+        if(!node) {
+            return;
+        } else {
+            this.postOrder(node.left);
+            this.postOrder(node.right);
+            console.log(`${node.data} `)
+        }
+    }
 }
+
+const bst = new BinarySearchTree(52);
+bst.insert(40)
+bst.insert(62)
+bst.insert(24)
+bst.insert(32)
+bst.insert(58)
+bst.insert(69)
+console.log(`Preorder: `)
+bst.preOrder()
+console.log(`Postorder: `)
+bst.postOrder()
+console.log(`In-Order: `)
+bst.inOrder()
