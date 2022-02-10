@@ -7,7 +7,7 @@ it's on the tin - unless otherwise noted, all code is written in Javascript ES6 
 - [x] Linked Lists (Single, Double) (Completed on January 19, 2022)
 - [x] Stack (completed on January 24, 2022)
 - [x] Queue (completed February 2, 2022)
-- [ ] Tree (Binary Search Tree)
+- [x] Tree (Binary Search Tree) (completed, February 10, 2022)
 - [ ] Graph
 - [ ] Heap
 
