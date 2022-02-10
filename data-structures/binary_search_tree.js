@@ -10,11 +10,11 @@ class Node {
     }
 
     hasLeft() {
-        return this.left;
+        return this.left !== null;
     }
 
     hasRight() {
-        return this.right;
+        return this.right !== null;
     }
 }
 
@@ -27,6 +27,13 @@ class BinarySearchTree {
         }
     }
 
+    /**
+     * Insert a node into Binary Search Tree
+     * Runtime: O(log(n)) → where n is the size of the binary tree
+     * Space Complexity: O(1) → we only create one node for the insertion
+     * @param {Number} data 
+     * @returns 
+     */
     insert(data) {
         const newNode = new Node(data);
         if(!this.root) { 
@@ -57,30 +64,42 @@ class BinarySearchTree {
         }
     }
 
+    /**
+     * Delete a node from the binary search tree
+     * Runtime: O(log(n)) → we split the tree in half on each subsequent search
+     * Space Complexity: O(1) → We don't add anything to the tree, we simply delete a node
+     * @param {Number} data 
+     * @param {Node} parent 
+     */
     delete(data, parent = this.root) {
-        const val = parent.data;
-        if (val === data) {
-            if(parent.isLeaf()) {
-                parent = null;
-            } else if(parent.hasLeft() && !parent.hasRight()) {
-                parent = parent.left;
-            } else if(!parent.hasLeft() && parent.hasRight()) {
-                parent = parent.right;
-            } else {
-                /*
-                    1. Get smallest value of right subtree (you can also get the largest value of the left subtree, either way works)
-                    2. Set parent to value from step 1.
-                    3. Delete the duplicate child node as we no longer need it
-                */
-               const temp = getMin(parent.right);
-               parent.data = temp;
-               this.delete(temp, parent.right);
-            }
-        } else if(data < val) {
-            this.delete(data, parent.left)
+        if(!parent) {
+            return parent;
         } else {
-            this.delete(data, parent.right)
+            const val = parent.data;
+            if (val === data) {
+                if(parent.isLeaf()) {
+                    parent = null;
+                } else if(parent.hasLeft() && !parent.hasRight()) {
+                    parent = parent.left;
+                } else if(!parent.hasLeft() && parent.hasRight()) {
+                    parent = parent.right;
+                } else {
+                    /*
+                        1. Get smallest value of right subtree (you can also get the largest value of the left subtree, either way works)
+                        2. Set parent to value from step 1.
+                        3. Delete the duplicate child node as we no longer need it, and set the result as the new right node
+                    */
+                   const temp = this.getMin(parent.right);
+                   parent.data = temp;
+                   parent.right = this.delete(temp, parent.right);
+                }
+            } else if(data < val) {
+                this.delete(data, parent.left)
+            } else {
+                this.delete(data, parent.right)
+            }
         }
+        return parent;
     }
 
     getMin(node = this.root) {
@@ -142,3 +161,6 @@ console.log(`Postorder: `)
 bst.postOrder()
 console.log(`In-Order: `)
 bst.inOrder()
+bst.delete(62)
+console.log(`Preorder (After Delete): `)
+bst.preOrder()
