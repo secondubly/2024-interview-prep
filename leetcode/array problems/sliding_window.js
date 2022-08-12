@@ -20,15 +20,15 @@ Modified: !date!
 
 function maxSumOfSubarray (arr, len) {
     let maxSum = -Infinity // this is the value that will contain the answer we return, I set this to -Infinity because it's possible to have negative numbers in your array!
-    let tempSum = 0 // this is our "ending" pointer for step 1
+    let tempSum = 0 // in the above algorithm, "i", this is our "starting" pointer
 
     // this is just a sanity check, if the arr is smaller than the given length, there's nothing to do
     if (len < 0 || arr.length < len) {
         return null
     }
 
-    for (let i = 0; i < arr.length; i++) { // here, i is our starting pointer
-        tempSum += arr[i] // adding the current start pointer value to tempSum
+    for (let i = 0; i < arr.length; i++) { // "i" is our ending pointer
+        tempSum += arr[i] // adding the current value to tempSum (incrementing our start pointer)
         if (i >= len - 1) { // if we've gotten to a valid window size (AKA step 2 of the algorithm)
             maxSum = Math.max(tempSum, maxSum) // maxSum should be the largest value between tempSum and maxSum
             // this is the sliding window part!!! (aka step 3 in the algorithm above)
