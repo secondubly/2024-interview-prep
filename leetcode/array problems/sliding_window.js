@@ -23,7 +23,7 @@ function maxSumOfSubarray (arr, len) {
     let tempSum = 0 // this is our "ending" pointer for step 1
 
     // this is just a sanity check, if the arr is smaller than the given length, there's nothing to do
-    if (arr.length < len) {
+    if (len < 0 || arr.length < len) {
         return null
     }
 
