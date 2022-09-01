@@ -39,7 +39,43 @@ function oneAway(str1, str2) {
     return oddCount < 3 ? true : false
 }
 
+/*
+ I read the solution in the back of the book to see if they were different from mine - it was. But I noticed that the second solution they gave is actually not valid code.
+ You'll notice below when you try to run it against "pale" and "bale" (which should return true), it returns false. I don't know if this was ever fixed in an addendum, but I added
+ it because I felt like I was going crazy trying to figure out what I did wrong when taking notes and stepping through the code in my head.
+*/
+function oneAway2(str1, str2) {
+    if(Math.abs(str1.length - str2.length) > 1) {
+        return false
+    }
+
+    const shortStr = str1.length < str2.length ? str1 : str2
+    const longStr = str1.length < str2.length ? str2 : str1
+
+    const indexShort = 0
+    const indexLong = 0
+    let foundDifference = 0
+    while (indexShort < shortStr.length && indexLong < longStr.length) {
+        if(shortStr[indexShort] !== longStr[indexLong]) {
+            if(foundDifference) {
+                return false
+            }
+            foundDifference = true
+            
+            if(shortStr.length < longStr.length) {
+                indexLong++
+            }
+        } else {
+            indexShort++
+            indexLong++
+        }
+    }
+    return true
+}
+
 console.log(oneAway('pale', 'ple'))
-console.log(oneAway('pales', 'pale'))
+console.log(oneAway2('pale', 'bale'))
 console.log(oneAway('pale', 'bale'))
-console.log(oneAway('pale', 'bake'))
+// console.log(oneAway('pales', 'pale'))
+// console.log(oneAway('pale', 'bale'))
+// console.log(oneAway('pale', 'bake')) 
