@@ -23,7 +23,7 @@ function checkPermutationBF(strA, strB) {
 
     arr = strB.split('')
     sorted = arr.sort()
-    const sortedB = sorted.join()
+    const sortedB = sorted.join('')
 
     for(let i = 0; i < strA.length; i++) {
         if(sortedA[i] !== sortedB[i]) {
@@ -47,18 +47,18 @@ function checkPermutation(strA, strB) {
     }
 
     const strMap = new Map()
-    for(const char of strA) {
-        strMap[char] = strMap[char] + 1 || 1
+    for (const char of strA) {
+        strMap.set(char, strMap.get(char) + 1 || 1)
     }
 
-    for(const char of strB) {
-        if(!strMap[char]) {
+    for (const char of strB) {
+        if (!strMap.has(char)) {
             return false
         }
-        strMap[char] -= 1
+        strMap.set(char, strMap.get(char) - 1)
     }
 
-    for(const count of strMap.values()) {
+    for (const count of strMap.values()) {
         if(count !== 0) {
             return false
         }
@@ -67,4 +67,7 @@ function checkPermutation(strA, strB) {
 }
 
 console.log(checkPermutationBF('aba', 'bba'))
+console.log(checkPermutationBF('aba', 'baa'))
+
 console.log(checkPermutation('aba', 'bba'))
+console.log(checkPermutation('aba', 'baa'))
