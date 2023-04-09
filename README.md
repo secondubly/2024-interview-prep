@@ -1,13 +1,13 @@
-# 2022-interview-prep
+# 2023 Interview Prep
 it's on the tin - unless otherwise noted, all code is written in Javascript ES6 style, this readme will be updated with dates upon which each thing was completed.
 
 
 # Study Topics
 ## Data Structures
-- [x] Linked Lists (Single, Double) (Completed on January 19, 2022)
-- [x] Stack (completed on January 24, 2022)
-- [x] Queue (completed February 2, 2022)
-- [x] Tree (Binary Search Tree) (completed, February 10, 2022)
+- [ ] Linked Lists (Single, Double)
+- [ ] Stack
+- [ ] Queue
+- [ ] Tree (Binary Search Tree)
 - [ ] Graph
 - [ ] Heap
 
@@ -20,3 +20,6 @@ it's on the tin - unless otherwise noted, all code is written in Javascript ES6 
 
 # Leetcode Problems and Blind 75
 - Will be put into their own folders and linked here for ease of access
+
+# Resources for Studying
+- This is an ongoing list, used to keep track of what I'm studying with and important notes otherwise
