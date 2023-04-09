@@ -18,8 +18,12 @@ it's on the tin - unless otherwise noted, all code is written in Javascript ES6 
 - [ ] Selection Sort
 - [ ] Quick Sort
 
-# Leetcode Problems and Blind 75
-- Will be put into their own folders and linked here for ease of access
+## Leetcode Problems and Blind 75
+Will be put into their own folders and linked here for ease of access
 
-# Resources for Studying
-- This is an ongoing list, used to keep track of what I'm studying with and important notes otherwise
+## Resources for Studying
+This is an ongoing list, used to keep track of what I'm studying with and important notes otherwise
+
+- [Cracking the Coding Interview 6th Edition][ctci]
+
+[ctci]: https://a.co/d/d39gq5k
