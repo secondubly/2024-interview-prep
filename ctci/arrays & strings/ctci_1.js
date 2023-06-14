@@ -23,8 +23,10 @@ function isUniqueWithDS(str) {
     return true
 }
 
-console.log(isUnique('baby'))
-console.log(isUnique('pow'))
+// console.log(isUnique('baby'))
+// console.log(isUnique('pow'))
 
-console.log(isUniqueWithDS('baby'))
-console.log(isUniqueWithDS('pow'))
+// console.log(isUniqueWithDS('baby'))
+// console.log(isUniqueWithDS('pow'))
+
+console.log(isUnique(''))
