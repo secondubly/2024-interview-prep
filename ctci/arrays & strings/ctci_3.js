@@ -3,7 +3,7 @@ has sufficient space at the end to hold the additional characters, and that you 
 length of the string. */
 
 /* 
-the first thing to note is that a string is going from taking up one space, to taking up 3 spaces,
+the first thing to note is that a space is going from taking up one space, to taking up 3 spaces,
 so the length of the new string will be number of spaces * 2 + current string length 
 (it is * 2 because we are using the existing space to hold one of the URL characters)
 
