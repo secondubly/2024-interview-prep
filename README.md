@@ -1,4 +1,4 @@
-# 2023 Interview Prep
+# 2024 Interview Prep
 it's on the tin - unless otherwise noted, all code is written in Javascript ES6 style, this readme will be updated with dates upon which each thing was completed.
 
 
